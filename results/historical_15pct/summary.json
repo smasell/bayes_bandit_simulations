@@ -1,0 +1,118 @@
+{
+  "source": "/Users/sergeimaslianik/Downloads/revenue_day7.csv",
+  "historical": {
+    "users": 113771,
+    "mean": 2.43952026439075,
+    "sd": 12.692941407674539,
+    "zero_fraction": 0.9497938842059928
+  },
+  "method": "Thompson sampling; approximate Bayesian bootstrap normal posterior for mean revenue; 2,000 warm-up users per arm; 2,000-user mature batches; 5% minimum exploration per arm; stop at P(arm is best)>=95%; 1,024 screening and 8,192 confirmation posterior draws.",
+  "limitations": "Normal approximation to Bayesian bootstrap, not exact posterior sampling. Empirical stationary IID outcomes. All batch outcomes mature before the next allocation. Prices 70/80/90 share the historical distribution; price 100 has a constructed 15% lift. This does not estimate actual price elasticity. Repeated posterior stopping has no guaranteed frequentist 5% error control.",
+  "scenarios": [
+    {
+      "scenario": "spend_lift",
+      "runs": 2000,
+      "seed": 20261007,
+      "horizon": 300000,
+      "true_means": [
+        2.43952026439075,
+        2.43952026439075,
+        2.43952026439075,
+        2.8054483040493623
+      ],
+      "correct_stop_fraction": 0.999,
+      "wrong_stop_fraction": 0.001,
+      "unfinished_fraction": 0.0,
+      "users_for_correct_completion_quantiles": {
+        "0.5": 46000,
+        "0.8": 82000,
+        "0.9": 104000
+      },
+      "median_users_among_stopped_runs": 46000.0,
+      "mean_users_at_stop_or_cap": 54285.0,
+      "mean_arm_users_at_stop_or_cap": [
+        7774.1385,
+        7872.6195,
+        8028.8465,
+        30609.3955
+      ],
+      "winner_counts": {
+        "70": 0,
+        "80": 0,
+        "90": 2,
+        "100": 1998
+      },
+      "null_note": null
+    },
+    {
+      "scenario": "payer_lift",
+      "runs": 2000,
+      "seed": 20261008,
+      "horizon": 300000,
+      "true_means": [
+        2.43952026439075,
+        2.43952026439075,
+        2.43952026439075,
+        2.8054483040493623
+      ],
+      "correct_stop_fraction": 0.998,
+      "wrong_stop_fraction": 0.002,
+      "unfinished_fraction": 0.0,
+      "users_for_correct_completion_quantiles": {
+        "0.5": 48000,
+        "0.8": 82000,
+        "0.9": 102000
+      },
+      "median_users_among_stopped_runs": 48000.0,
+      "mean_users_at_stop_or_cap": 54726.0,
+      "mean_arm_users_at_stop_or_cap": [
+        7899.765,
+        8099.522,
+        7965.693,
+        30761.02
+      ],
+      "winner_counts": {
+        "70": 0,
+        "80": 3,
+        "90": 1,
+        "100": 1996
+      },
+      "null_note": null
+    },
+    {
+      "scenario": "null",
+      "runs": 2000,
+      "seed": 20261009,
+      "horizon": 300000,
+      "true_means": [
+        2.43952026439075,
+        2.43952026439075,
+        2.43952026439075,
+        2.43952026439075
+      ],
+      "correct_stop_fraction": 0.0,
+      "wrong_stop_fraction": 0.0535,
+      "unfinished_fraction": 0.9465,
+      "users_for_correct_completion_quantiles": {
+        "0.5": null,
+        "0.8": null,
+        "0.9": null
+      },
+      "median_users_among_stopped_runs": 68000.0,
+      "mean_users_at_stop_or_cap": 288820.0,
+      "mean_arm_users_at_stop_or_cap": [
+        72424.648,
+        73007.8925,
+        71741.9335,
+        71645.526
+      ],
+      "winner_counts": {
+        "70": 22,
+        "80": 38,
+        "90": 24,
+        "100": 23
+      },
+      "null_note": "Every declared winner is a false superiority declaration when all arms tie."
+    }
+  ]
+}

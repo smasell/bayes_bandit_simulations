@@ -1,0 +1,265 @@
+{
+  "source": "/Users/sergeimaslianik/Downloads/revenue_day7.csv",
+  "historical": {
+    "users": 113771,
+    "mean": 2.43952026439075,
+    "sd": 12.692941407674539,
+    "zero_fraction": 0.9497938842059928
+  },
+  "method": "Thompson sampling; approximate Bayesian bootstrap normal posterior for mean revenue; 2,000 warm-up users per arm; 2,000-user mature batches; 5% minimum exploration per arm; stop at P(arm is best)>=95%; 1,024 screening and 8,192 confirmation posterior draws.",
+  "limitations": "Normal approximation to Bayesian bootstrap, not exact posterior sampling. Empirical stationary IID outcomes. All batch outcomes mature before the next allocation. Prices 70/80/90 share the historical distribution; price 100 has the specified constructed lift. This does not estimate actual price elasticity. Repeated posterior stopping has no guaranteed frequentist 5% error control.",
+  "scenarios": [
+    {
+      "scenario": "spend_lift",
+      "uplift": 0.05,
+      "runs": 2000,
+      "seed": 20261007,
+      "horizon": 1500000,
+      "true_means": [
+        2.43952026439075,
+        2.43952026439075,
+        2.43952026439075,
+        2.5614962776102876
+      ],
+      "correct_stop_fraction": 0.9845,
+      "wrong_stop_fraction": 0.01,
+      "unfinished_fraction": 0.0055,
+      "users_for_correct_completion_quantiles": {
+        "0.5": 368000,
+        "0.8": 634000,
+        "0.9": 830000
+      },
+      "median_users_among_stopped_runs": 358000.0,
+      "mean_users_at_stop_or_cap": 410293.0,
+      "mean_arm_users_at_stop_or_cap": [
+        56550.3235,
+        58749.9915,
+        56953.417,
+        238039.268
+      ],
+      "winner_counts": {
+        "70": 9,
+        "80": 7,
+        "90": 4,
+        "100": 1969
+      },
+      "null_note": null
+    },
+    {
+      "scenario": "payer_lift",
+      "uplift": 0.05,
+      "runs": 2000,
+      "seed": 20261008,
+      "horizon": 1500000,
+      "true_means": [
+        2.43952026439075,
+        2.43952026439075,
+        2.43952026439075,
+        2.5614962776102876
+      ],
+      "correct_stop_fraction": 0.9785,
+      "wrong_stop_fraction": 0.015,
+      "unfinished_fraction": 0.0065,
+      "users_for_correct_completion_quantiles": {
+        "0.5": 384000,
+        "0.8": 678000,
+        "0.9": 906000
+      },
+      "median_users_among_stopped_runs": 370000.0,
+      "mean_users_at_stop_or_cap": 426055.0,
+      "mean_arm_users_at_stop_or_cap": [
+        60470.0585,
+        61269.2835,
+        58569.9595,
+        245745.6985
+      ],
+      "winner_counts": {
+        "70": 13,
+        "80": 9,
+        "90": 8,
+        "100": 1957
+      },
+      "null_note": null
+    },
+    {
+      "scenario": "spend_lift",
+      "uplift": 0.1,
+      "runs": 2000,
+      "seed": 20261007,
+      "horizon": 1500000,
+      "true_means": [
+        2.43952026439075,
+        2.43952026439075,
+        2.43952026439075,
+        2.683472290829825
+      ],
+      "correct_stop_fraction": 0.9935,
+      "wrong_stop_fraction": 0.0065,
+      "unfinished_fraction": 0.0,
+      "users_for_correct_completion_quantiles": {
+        "0.5": 102000,
+        "0.8": 180000,
+        "0.9": 236000
+      },
+      "median_users_among_stopped_runs": 100000.0,
+      "mean_users_at_stop_or_cap": 116262.0,
+      "mean_arm_users_at_stop_or_cap": [
+        16188.356,
+        16615.3235,
+        16474.0805,
+        66984.24
+      ],
+      "winner_counts": {
+        "70": 6,
+        "80": 2,
+        "90": 5,
+        "100": 1987
+      },
+      "null_note": null
+    },
+    {
+      "scenario": "payer_lift",
+      "uplift": 0.1,
+      "runs": 2000,
+      "seed": 20261008,
+      "horizon": 1500000,
+      "true_means": [
+        2.43952026439075,
+        2.43952026439075,
+        2.43952026439075,
+        2.683472290829825
+      ],
+      "correct_stop_fraction": 0.9975,
+      "wrong_stop_fraction": 0.0025,
+      "unfinished_fraction": 0.0,
+      "users_for_correct_completion_quantiles": {
+        "0.5": 98000,
+        "0.8": 174000,
+        "0.9": 222000
+      },
+      "median_users_among_stopped_runs": 98000.0,
+      "mean_users_at_stop_or_cap": 113538.0,
+      "mean_arm_users_at_stop_or_cap": [
+        15963.1055,
+        15899.5695,
+        15972.6925,
+        65702.6325
+      ],
+      "winner_counts": {
+        "70": 1,
+        "80": 1,
+        "90": 3,
+        "100": 1995
+      },
+      "null_note": null
+    },
+    {
+      "scenario": "spend_lift",
+      "uplift": 0.15,
+      "runs": 2000,
+      "seed": 20261007,
+      "horizon": 1500000,
+      "true_means": [
+        2.43952026439075,
+        2.43952026439075,
+        2.43952026439075,
+        2.8054483040493623
+      ],
+      "correct_stop_fraction": 0.999,
+      "wrong_stop_fraction": 0.001,
+      "unfinished_fraction": 0.0,
+      "users_for_correct_completion_quantiles": {
+        "0.5": 46000,
+        "0.8": 82000,
+        "0.9": 104000
+      },
+      "median_users_among_stopped_runs": 46000.0,
+      "mean_users_at_stop_or_cap": 54285.0,
+      "mean_arm_users_at_stop_or_cap": [
+        7774.1385,
+        7872.6195,
+        8028.8465,
+        30609.3955
+      ],
+      "winner_counts": {
+        "70": 0,
+        "80": 0,
+        "90": 2,
+        "100": 1998
+      },
+      "null_note": null
+    },
+    {
+      "scenario": "payer_lift",
+      "uplift": 0.15,
+      "runs": 2000,
+      "seed": 20261008,
+      "horizon": 1500000,
+      "true_means": [
+        2.43952026439075,
+        2.43952026439075,
+        2.43952026439075,
+        2.8054483040493623
+      ],
+      "correct_stop_fraction": 0.998,
+      "wrong_stop_fraction": 0.002,
+      "unfinished_fraction": 0.0,
+      "users_for_correct_completion_quantiles": {
+        "0.5": 48000,
+        "0.8": 82000,
+        "0.9": 102000
+      },
+      "median_users_among_stopped_runs": 48000.0,
+      "mean_users_at_stop_or_cap": 54726.0,
+      "mean_arm_users_at_stop_or_cap": [
+        7899.765,
+        8099.522,
+        7965.693,
+        30761.02
+      ],
+      "winner_counts": {
+        "70": 0,
+        "80": 3,
+        "90": 1,
+        "100": 1996
+      },
+      "null_note": null
+    },
+    {
+      "scenario": "null",
+      "uplift": 0.0,
+      "runs": 2000,
+      "seed": 20261009,
+      "horizon": 1500000,
+      "true_means": [
+        2.43952026439075,
+        2.43952026439075,
+        2.43952026439075,
+        2.43952026439075
+      ],
+      "correct_stop_fraction": 0.0,
+      "wrong_stop_fraction": 0.0865,
+      "unfinished_fraction": 0.9135,
+      "users_for_correct_completion_quantiles": {
+        "0.5": null,
+        "0.8": null,
+        "0.9": null
+      },
+      "median_users_among_stopped_runs": 166000.0,
+      "mean_users_at_stop_or_cap": 1398052.0,
+      "mean_arm_users_at_stop_or_cap": [
+        350290.703,
+        346284.5195,
+        352949.59,
+        348527.1875
+      ],
+      "winner_counts": {
+        "70": 36,
+        "80": 58,
+        "90": 45,
+        "100": 34
+      },
+      "null_note": "Every declared winner is a false superiority declaration when all arms tie."
+    }
+  ]
+}
